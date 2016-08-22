@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04A56CD71D2EDF500017D395 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 04A56CD61D2EDF500017D395 /* main.c */; };
+		04A56CFE1D36BAB60017D395 /* client-tls.c in Sources */ = {isa = PBXBuildFile; fileRef = 04A56CFD1D36BAB60017D395 /* client-tls.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		04A56CD31D2EDF500017D395 /* TestCliServWolfSSL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestCliServWolfSSL; sourceTree = BUILT_PRODUCTS_DIR; };
-		04A56CD61D2EDF500017D395 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		04A56CFD1D36BAB60017D395 /* client-tls.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "client-tls.c"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +57,7 @@
 		04A56CD51D2EDF500017D395 /* TestCliServWolfSSL */ = {
 			isa = PBXGroup;
 			children = (
-				04A56CD61D2EDF500017D395 /* main.c */,
+				04A56CFD1D36BAB60017D395 /* client-tls.c */,
 			);
 			path = TestCliServWolfSSL;
 			sourceTree = "<group>";
@@ -118,7 +118,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04A56CD71D2EDF500017D395 /* main.c in Sources */,
+				04A56CFE1D36BAB60017D395 /* client-tls.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +209,13 @@
 		04A56CDB1D2EDF500017D395 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = /usr/local/Cellar/openssl/1.0.2d_1/include/openssl;
+				LIBRARY_SEARCH_PATHS = "/Users/mac/Documents/wolfssl-3.9.6";
+				OTHER_LDFLAGS = (
+					"-L/usr/local/lib",
+					"-lwolfssl",
+					"-lnetwork",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -216,6 +223,13 @@
 		04A56CDC1D2EDF500017D395 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = /usr/local/Cellar/openssl/1.0.2d_1/include/openssl;
+				LIBRARY_SEARCH_PATHS = "/Users/mac/Documents/wolfssl-3.9.6";
+				OTHER_LDFLAGS = (
+					"-L/usr/local/lib",
+					"-lwolfssl",
+					"-lnetwork",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -239,6 +253,7 @@
 				04A56CDC1D2EDF500017D395 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
